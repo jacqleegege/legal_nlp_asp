@@ -4,6 +4,7 @@ import torch
 import transformers
 from transformers import AutoTokenizer, BitsAndBytesConfig
 from transformers.generation import GenerationConfig
+from huggingface_hub import login
 
 import os
 
@@ -32,7 +33,7 @@ class HuggingFaceLlmManager(LlmManager):
     def __init__(
         self,
         model_name,
-        cache_dir="/vol/bitbucket/clarg/argumentative-llm/cache",
+        cache_dir="/vol/bitbucket/jl8420/legal_nlp_asp_cache",
         model_args=None,
         input_device="cuda:0",
         quantization="4bit",
@@ -51,6 +52,8 @@ class HuggingFaceLlmManager(LlmManager):
             quantization_config = None
         else:
             raise ValueError(f"Invalid quantization value {quantization}")
+        
+        login(token='')
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
         self.pipeline = transformers.pipeline(

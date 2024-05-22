@@ -1,6 +1,6 @@
 import llm_managers as llm
 
-llm_manager = llm.HuggingFaceLlmManager( model_name= "meta-llama/Llama-2-13b-hf")
+llm_manager = llm.HuggingFaceLlmManager( model_name= "mistralai/Mistral-7B-Instruct-v0.2")
 
 prompt = """You are a system responsible with translating natural language legal cases to its ASP form
 You need to follow the format of the given examples. Here are some examples to learn from:
@@ -1028,4 +1028,4 @@ of the following natural language text:
 
 """
 
-llm_manager.chat_completion(prompt)
+llm_manager.chat_completion(prompt,print_result=True)
