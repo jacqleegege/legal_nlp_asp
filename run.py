@@ -8496,6 +8496,60 @@ end_(bob_lives_alice_house_s7703_b_3_pos,d2018_02_10).
 :- s7703_b_3(alice_s7703_b_3_pos,bob_s7703_b_3_pos,alice_s_house_s7703_b_3_pos,2018).
 :- halt.
 
+END OF EXAMPLES
+
+Given the examples that has been shown, you, the system, is asked to provide the ASP code (Facts and Test)
+of the following natural language text:
+
+1.
+% Text
+% Alice is a surviving spouse for the year 2017. Alice's taxable income for the year 2017 is $615572.
+
+% Question
+% Alice has to pay $220295 in taxes for the year 2017 under section 1(a)(iv). Contradiction
+
+2.
+% Text
+% Alice is a surviving spouse for the year 2017. Alice's taxable income for the year 2017 is $236422.
+
+% Question
+% Alice has to pay $70640 in taxes for the year 2017 under section 1(a)(iv). Entailment
+
+3.
+% Text
+% Alice is a head of household for the year 2017. Alice's taxable income for the year 2017 is $1172980.
+
+% Question
+% Alice has to pay $442985 in taxes for the year 2017 under section 1(b)(i). Contradiction
+
+4.
+% Text
+% Alice is a head of household for the year 2017. Alice's taxable income for the year 2017 is $9560.
+
+% Question
+% Alice has to pay $1434 in taxes for the year 2017 under section 1(b)(i). Entailment
+
+5.
+% Text
+% Alice is married under section 7703 for the year 2017. Alice's taxable income for the year 2017 is $67285. Alice files taxes separately in 2017.
+
+% Question
+% Alice has to pay $17123 in taxes for the year 2017 under section 1(d)(i). Contradiction
+
+6.
+% Text
+% Alice is married under section 7703 for the year 2017. Alice's taxable income for the year 2017 is $6662. Alice files taxes separately in 2017.
+
+% Question
+% Alice has to pay $999 in taxes for the year 2017 under section 1(d)(i). Entailment
+
+7.
+% Text
+% Alice's taxable income for the year 2017 is $22895. Alice is not married, is not a surviving spouse, and is not a head of household in 2017.
+
+% Question
+% Alice has to pay $3538 in taxes for the year 2017 under section 1(c)(iii). Contradiction
+
 """
 
 llm_manager.chat_completion(prompt,print_result=True)
