@@ -164,3 +164,5 @@ of the following natural language text:
 % Section 7703(a)(2) applies to Alice for the year 2012. Contradiction
 
 """
+
+llm_manager.chat_completion(prompt,print_result=True, max_new_tokens=2000)
